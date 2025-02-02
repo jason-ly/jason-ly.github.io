@@ -11,7 +11,7 @@
 ## Completed Projects and Certifications
 
 ### Completed Projects
-#### [Network Vulnerability and Risk Assessment](c844.md)
+#### [Network Vulnerability and Risk Assessment](Projects/Coursework/WGU/c844.md)
 - Conducted a comprehensive vulnerability assessment using **Nmap**, **Zenmap**, and **Wireshark**.
 - Identified and documented critical vulnerabilities, including outdated systems and insecure protocols.
 - Proposed actionable remediation strategies to enhance network security, such as upgrading to SFTP, HTTPS, and supported OS versions.
