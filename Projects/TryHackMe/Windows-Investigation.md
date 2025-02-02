@@ -26,9 +26,9 @@ This simulated exercise covers critical Windows features, event logs, and method
   However, upon logging onto the system, we notice something particularly interesting...
   Two strange pop-ups at start up?
   
-![sus](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/mimz.png)
+![sus](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/mimz.png)
 
-![sus2](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/mimz2.png)
+![sus2](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/mimz2.png)
 
 Anyways, on to the challenges!
   
@@ -43,7 +43,7 @@ Anyways, on to the challenges!
 - Using the command prompt and typing "systeminfo" yields the following results:
    - This could also be accomplished via Start > Settings > System > About.
 
-![systeminfo](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q1.png)
+![systeminfo](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q1.png)
 
 - The Windows machine is running Windows Server 2016.
 
@@ -51,13 +51,13 @@ Anyways, on to the challenges!
 
 - Using EventViewer, we can filter the results from Windows Logs > Security under Event ID 4624 for successful logins.
 
-![q2.1](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q2.1.png)
+![q2.1](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q2.1.png)
 
-![q2.2](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q2.2.png)
+![q2.2](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q2.2.png)
 
-![q2.3](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q2.3.png)
+![q2.3](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q2.3.png)
 
-![q2.4](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q2.4.png)
+![q2.4](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q2.4.png)
 
 - The last user to have logged on was Administrator.
 
@@ -65,11 +65,11 @@ Anyways, on to the challenges!
 
 - While in EventViewer, we can further refine the results to see the last successful logon for John.
 
-![q3](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q3.png)
+![q3](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q3.png)
 
 - However, this can also be done via command prompt with "net user John".
 
-![q3.1](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q3.1.png)
+![q3.1](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q3.1.png)
 
 - Both results will show that John last logged on at 03/02/2019 5:48:32 PM.
 
@@ -82,11 +82,11 @@ Anyways, on to the challenges!
 
    - View System Information > Software Environment > Startup Programs
 
-![q4](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q4.png)
+![q4](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q4.png)
 
    - Check the Registry; Registry Editor > HKEY_LOCAL_MACHINE > SOFTWARE > Microsoft > Windowws > CurrentVersion > Run
 
-![q4.1](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q4.1.png)
+![q4.1](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q4.1.png)
 
 - The system connects to 10.34.2.3 on startup.
    
@@ -94,7 +94,7 @@ Anyways, on to the challenges!
 
 - This can be determined using command prompt with 'net localgroup "Administrators"'.
   
-![q5](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q5.png)
+![q5](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q5.png)
 
 - The other two accounts with administrative privileges were Jenny and Guest.
 
@@ -102,7 +102,7 @@ Anyways, on to the challenges!
 
 - Utilizing command prompt again, we enter "net user Jenny".
 
-![q6](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q6.png)
+![q6](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q6.png)
 
 - She apparently has never logged on...? We'll come back to this later.
 
@@ -110,7 +110,7 @@ Anyways, on to the challenges!
 
 - To view scheduled tasks, we open, well, Task Scheduler. <br> From there, we can view the Task Scheduler Library to see all tasks scheduled to run.
 - 
-![tasksc](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/tasksc.png)
+![tasksc](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/tasksc.png)
 
 - While there are a few suspect processes, the answer we were tasked wwith finding is "Clean file system." <br> Notably, the task isn't actually cleaning anything, but rather is running a PowerShell script as indicated by the .ps1 file. <br> More importantly, the action listed executes "nc.ps1 -l 1348" -- indicating a netcat listener on port 1348.
   
@@ -120,7 +120,7 @@ Anyways, on to the challenges!
   - A user, Jenny, was created and has never logged on; see previous question.
   - There are various suspect tasks scheduled to run.
     
-![q7.1](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q7.1.png)
+![q7.1](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q7.1.png)
 
 - These all occur 03/02/2019.
   - Additionally, the scheduled task "GameOver's" event action is: C:\TMP\mim.exe sekurlsa::LogonPasswords > C:\TMP\o.txt <br> Executing a program called "mim.exe," skims passwords, and places them in a file, "o.txt." 
@@ -129,9 +129,9 @@ Anyways, on to the challenges!
 
 - With the information above, we can go back to EventViewer and narrow our focus to 03/02/2019, around 04:00:00 PM to 05:00:00 PM with an Event ID of 4672 to view when special privileges are assigned to a new logon.
 
-![q9.1](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q9.1.png)
+![q9.1](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q9.1.png)
 
-![q9.2](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q9.2.png)
+![q9.2](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q9.2.png)
 
 - According to the hint provided, the time ends in 00:00:49 PM, which correlates with 03/02/2019 4:04:49 PM. 
 
@@ -139,9 +139,9 @@ Anyways, on to the challenges!
 
 - If we pry further and investigate the C:\TMP folder, we can see the following:
 
-![q10](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q10.png)
+![q10](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q10.png)
 
-![q10.1](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q10.1.png)
+![q10.1](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q10.1.png)
 
 - This just about confirms our suspicions, the attacker is utilizing Mimikatz, an open-source cybersecurity tool designed to extract plaintext passwords, hashes, PINs, and Kerberos tickets from memory on Windows systems.
 
@@ -149,9 +149,9 @@ Anyways, on to the challenges!
 
 - For this, we check the hosts file located at C:\Windows\System32\drivers\etc, which serves as a local DNS which allows for the mapping of hostnames to IP addresses on the local machine. 
 
-![q11](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q11.png)
+![q11](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q11.png)
 
-![q11.1](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q11.1.png)
+![q11.1](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q11.1.png)
 
 - We see that the IP assigned to google.com is unfamiliar and listed as 76.32.97.132.
 
@@ -160,7 +160,7 @@ Anyways, on to the challenges!
 - This question required a bit of research, but it is essentially asking for the name of the file extension of the shell uploaded by the server's website. <br> As this is a Window's machine, the web server is use is most likely to be IIS.
 - By checking C:\inetpub, the default folder for Microsofft Internet Information Services (IIS).
 
-![q13](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q13.png)
+![q13](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q13.png)
 
 - We see that in the wwwroot folder, there are two file extensions: .gif and .jsp. <br> The latter seems suspicious, and via a quick google search, we find that a .jsp file can use template data, custom elements, scripting languages, and server-side Java objects to return dynamic content to a client.
 
@@ -168,7 +168,7 @@ Anyways, on to the challenges!
 
 - Since this is dealing with ports, a reasonable tool to utilize is the Windows Firewall. <br> From here, we'll check out the Inbound Rules.
 
-![q14](https://raw.githubusercontent.com/Gray-ground/Gray-ground.github.io/main/Projects/Assets/TryHackMe/Investigating%20Windows/q14.png)
+![q14](https://raw.githubusercontent.com/jason-ly/jason-ly.github.io/main/Projects/Assets/TryHackMe/InvestigatingWindows/q14.png)
 
 - This particular rule, "Allow outside connections for development," is without a group and has port 1337 open. <br> Very hacker-ish. 
 
@@ -188,4 +188,4 @@ This project demonstrated my ability to:
 
 --- 
 
-[View Full Portfolio](https://gray-ground.github.io/)
+[View Full Portfolio](https://jason-ly.github.io/)
